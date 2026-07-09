@@ -12,6 +12,8 @@ exports.login = async (req, res) => {
     password: req.body.password,
   }); // check ke mongodb
 
+  console.log(user, "<====================== users");
+
   if (!user || user.length < 1) {
     return res.status(200).json({ msg: "user unknow", login: false });
   }
