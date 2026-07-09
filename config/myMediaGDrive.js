@@ -18,13 +18,18 @@ var oauth2Client = null;
 var drive = null;
 
 const GETDATA_AUTH = async () => {
-  const TOKEN = await fs.readFileSync(TOKEN_PATH);
+  // const TOKEN = await fs.readFileSync(TOKEN_PATH);
 
-  const keys = JSON.parse(TOKEN);
+  // const keys = JSON.parse(TOKEN);
+  // return {
+  //   CLIENT_ID: keys.client_id,
+  //   CLIENT_SECRET: keys.client_secret,
+  //   REFRESH_TOKEN: keys.refresh_token,
+  // };
   return {
-    CLIENT_ID: keys.client_id,
-    CLIENT_SECRET: keys.client_secret,
-    REFRESH_TOKEN: keys.refresh_token,
+    CLIENT_ID: "",
+    CLIENT_SECRET: "",
+    REFRESH_TOKEN: "",
   };
 };
 
@@ -125,8 +130,9 @@ async function loadSavedCredentialsIfExist() {
  * @return {Promise<void>}
  */
 async function saveCredentials(client) {
-  const content = await fs.readFileSync(CREDENTIALS_PATH);
-  const keys = JSON.parse(content);
+  // const content = await fs.readFileSync(CREDENTIALS_PATH);
+  // const keys = JSON.parse(content);
+  const keys = {};
   const key = keys.installed || keys.web;
   const payload = JSON.stringify({
     type: "authorized_user",
