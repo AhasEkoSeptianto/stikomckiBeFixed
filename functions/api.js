@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 
 require("dotenv").config();
 require("../models/connect_monggoatlas");
-require("../config/myMediaGDrive");
+// require("../config/myMediaGDrive");
 
 const app = express();
 

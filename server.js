@@ -8,7 +8,7 @@ const app = express();
 
 require("dotenv").config();
 require("./models/connect_monggoatlas");
-require("./config/myMediaGDrive");
+// require("./config/myMediaGDrive");
 // midleware
 app.use(bodyParser.json());
 app.use(
